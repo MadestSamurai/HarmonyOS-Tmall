@@ -1,0 +1,111 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.input-row {
+    height: 50px;
+    display: grid;
+    grid-template-columns: 90% 8%;
+    grid-template-rows: 1fr;
+    background-image: url(common/images/precision/background.png);
+    background-size: 100%;
+    background-position: 0 -50;
+    position: fixed;
+}
+
+.input-item {
+    width: 100%;
+}
+
+.search-item {
+    border-radius: 25px;
+    margin: 4px 2% 4px 4%;
+    border: 1px solid #ff2150;
+}
+
+.search {
+    width: 80%;
+    height: 40px;
+}
+
+.button {
+    width: 61px;
+    height: 32px;
+    background-color: #ff2150;
+    font-size: 14fp;
+    margin-top: 1px;
+    margin-right: -5px;
+    margin-bottom: 1px;
+}
+
+.search,.search-item {
+    background-color: #F1F3F5;
+}
+
+.list-container{
+    display: flex;
+}
+.left-list{
+    width: 80px;
+    margin-right: 10px;
+}
+.left-list-item{
+    position: relative;
+    text-align: center;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.left-name{
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+}
+.right-list{
+    display: flex;
+    flex: 1;
+}
+.right-list-item{
+    display: flex;
+    flex-direction: column;
+}
+.cate-lv2-title {
+    width: 100%;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
+    padding: 15px 0;
+}
+.cate-lv3-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.cate-lv3-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 33.33%;
+    margin-bottom: 10px;
+}
+image{
+    width: 60px;
+    height: 60px;
+}
+.cate-lv3-title{
+    font-size: 14px;
+}
+
+.tab-bar {
+    position: fixed;
+}
+
+.bottom {
+    height: 8%;
+}

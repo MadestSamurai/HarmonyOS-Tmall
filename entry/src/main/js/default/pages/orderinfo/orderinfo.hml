@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="title-line">
+        <text class="title">
+            填写订单信息
+        </text>
+    </div>
+    <div class="input-item">
+        <input class="input" type="text" placeholder="请输入收货人" maxlength="20" showcounter="false" onchange="changeName">
+        </input>
+    </div>
+    <div class="input-item">
+        <input class="input" type="number" placeholder="请输入手机号" onchange="changeMobile"></input>
+    </div>
+    <div class="input-item">
+        <input class="input" type="number" placeholder="请输入邮编" onchange="changePostcode"></input>
+    </div>
+    <div class="input-item">
+        <textarea id="textarea" class="input" extend="true" placeholder="请输入地址" onchange="changeAddress">
+        </textarea>
+    </div>
+    <div class="input-item">
+        <textarea id="textarea" class="input" extend="true" placeholder="请输入留言" onchange="changeMessage">
+        </textarea>
+    </div>
+    <div class="circleall">
+        <button class="buttons" type="capsule" onclick="submit">提交订单</button>
+    </div>
+</div>

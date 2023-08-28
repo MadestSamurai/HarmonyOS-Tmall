@@ -1,0 +1,265 @@
+<element name='comp' src='../../common/component/tabBar/tabBar.hml'></element>
+
+<div class="container">
+    <list class="page-list">
+        <list-item clickeffect="false">
+            <div class="top-banner">
+                <div class="logoview">
+                    <image class="logo" src="common/images/precision/logo.png"></image>
+                </div>
+                <div>
+                    <text class="commercial">真五折，一年仅一次</text>
+                </div>
+                <div>
+                    <image class="double-eleven" src="common/images/precision/head_right.png"></image>
+                </div>
+            </div>
+        </list-item>
+        <list-item sticky="normal" clickeffect="false">
+            <div class="input-row">
+                <div class="input-item">
+                    <div class="search-item">
+                        <input class="search" type="text" maxlength="20" enterkeytype="search"
+                               headericon="/common/images/search.png" placeholder="搜索" onchange="changeKeyword">
+                        </input>
+                        <input class="button" type="button" value="搜索" onclick="searchGoods"></input>
+                    </div>
+                </div>
+                <div class="chatview">
+                    <image class="chat-button" src="common/images/precision/chat.png"></image>
+                </div>
+            </div>
+        </list-item>
+        <list-item clickeffect="false">
+            <div class="menu-row">
+                <list class="menulist" id="menulist" onscroll="trackBar">
+                    <block for="{{ topList }}">
+                        <list-item class="menuitem">
+                            <div class="box">
+                                <div class="textview" style='background-image : url("{{$item.pic}}");'>
+                                    <text class="text1">{{ $item.title }}</text>
+                                </div>
+                            </div>
+                        </list-item>
+                    </block>
+                </list>
+            </div>
+        </list-item>
+        <list-item clickeffect="false">
+            <div class="track-bar">
+                <div class="under-bar">
+                    <div class="roll-bar" style='margin-left : {{ rollBarPosition }} fp;'></div>
+                </div>
+            </div>
+        </list-item>
+        <list-item clickeffect="false">
+            <div class="double-eleven-row">
+                <image class="double-eleven-large" src="common/images/precision/tmall_double_eleven_large.png"></image>
+            </div>
+        </list-item>
+
+        <list-item clickeffect="false">
+            <div class="list-top-two">
+                <div class="top-card-one">
+                    <div class="card-one-content">
+                        <div>
+                            <image class="cat-coin-logo" src="common/images/precision/catcoin.png"></image>
+                        </div>
+                        <div class="card-one-content-text">
+                            <div>
+                                <text class="card-one-text-one">赚猫猫币赢免单</text>
+                            </div>
+                            <div class="card-one-text">
+                                <text class="card-one-text-two">累计抽</text>
+                                <text class="card-one-text-two-digital">50000</text>
+                                <text class="card-one-text-two">名</text>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-one-button">
+                        <div>
+                            <text class="card-one-text-three">任务:玩有点喜欢PK</text>
+                        </div>
+                        <div class="button-go">
+                            <text class="card-one-text-four">GO</text>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-card-two">
+                    <div class="card-two-content">
+                        <div>
+                            <image class="top-seller"
+                                   src="http://49.234.6.100:8080/tmall_springboot-0.0.1/img/productSingle_middle/654.jpg">
+                            </image>
+                        </div>
+                        <div>
+                            <image class="top-seller"
+                                   src="http://49.234.6.100:8080/tmall_springboot-0.0.1/img/productSingle_middle/2548.jpg">
+                            </image>
+                        </div>
+                    </div>
+                    <div class="card-two-button">
+                        <div>
+                            <text class="card-one-text-three">满300减50</text>
+                        </div>
+                        <div class="button-go-mall">
+                            <text class="card-two-text-four">去会场></text>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </list-item>
+        <list-item clickeffect="false">
+            <div class="list-top-two">
+                <div class="list-goods" style='background: linear-gradient( to bottom, #d5ecf6 0%, #fefefe 33%);'>
+                    <div class="card-title">
+                        <div class="title-view" style="background-image : url('common/images/precision/flash.png');">
+                        </div>
+                    </div>
+                    <div class="flash-content">
+                        <div class="flash-goods"
+                             style="background-image : url('http://49.234.6.100:8080/tmall_springboot-0.0.1/img/productSingle_middle/654.jpg');">
+                            <div class="prefer-view">
+                                <text class="prefer">{{ goodsList.flash.good1.preferential }}</text>
+                            </div>
+                        </div>
+                        <div class="flash-goods"
+                             style="background-image : url('http://49.234.6.100:8080/tmall_springboot-0.0.1/img/productSingle_middle/2548.jpg');">
+                            <div class="prefer-view">
+                                <text class="prefer">{{ goodsList.flash.good2.preferential }}</text>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flash-price">
+                        <div class="price-view">
+                            <text class="price">￥120</text>
+                        </div>
+                        <div class="price-view">
+                            <text class="price">￥114</text>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-goods" style='background: linear-gradient( to bottom, #ffe6eb 0%, #fefefe 33%);'>
+                    <div class="card-title">
+                        <div class="title-view" style="background-image : url('common/images/precision/top.png');">
+                            <text class="title-text">{{ goodsList.top.topWord }}</text>
+                        </div>
+                    </div>
+                    <div class="flash-content">
+                        <div class="flash-goods"
+                             style="background-image : url('http://49.234.6.100:8080/tmall_springboot-0.0.1/img/productSingle_middle/8279.jpg');">
+                        </div>
+                        <div class="flash-goods"
+                             style="background-image : url('http://49.234.6.100:8080/tmall_springboot-0.0.1/img/productSingle_middle/8906.jpg');">
+                        </div>
+                    </div>
+                    <div class="flash-price">
+                        <div class="prefer-view-text">
+                            <text class="prefer-text">{{ goodsList.top.good1.preferential }}</text>
+                        </div>
+                        <div class="prefer-view-text">
+                            <text class="prefer-text">{{ goodsList.top.good2.preferential }}</text>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </list-item>
+        <list-item clickeffect="false">
+            <div class="list-top-two">
+                <div class="list-goods" style='background: linear-gradient( to bottom, #d5ecf6 0%, #fefefe 33%);'>
+                    <div class="card-title">
+                        <div class="title-view" style="background-image : url('common/images/precision/new.png');">
+                            <text class="title-text">{{ goodsList.newComing.topWord }}</text>
+                        </div>
+                    </div>
+                    <div class="flash-content">
+                        <div class="flash-goods"
+                             style="background-image : url('http://49.234.6.100:8080/tmall_springboot-0.0.1/img/productSingle_middle/9499.jpg');">
+                        </div>
+                        <div class="flash-goods"
+                             style="background-image : url('http://49.234.6.100:8080/tmall_springboot-0.0.1/img/productSingle_middle/4401.jpg');">
+                        </div>
+                    </div>
+                    <div class="flash-price">
+                        <div class="prefer-view-text">
+                            <text class="prefer-text">{{ goodsList.newComing.good1.preferential }}</text>
+                        </div>
+                        <div class="prefer-view-text">
+                            <text class="prefer-text">{{ goodsList.newComing.good2.preferential }}</text>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-goods" style='background: linear-gradient( to bottom, #ffe6eb 0%, #fefefe 33%);'>
+                    <div class="card-title">
+                        <div class="title-view" style="background-image : url('common/images/precision/trend.png');">
+                            <text class="title-text">{{ goodsList.trend.topWord }}</text>
+                        </div>
+                    </div>
+                    <div class="flash-content">
+                        <div class="flash-goods"
+                             style="background-image : url('http://49.234.6.100:8080/tmall_springboot-0.0.1/img/productSingle_middle/9521.jpg');">
+                        </div>
+                        <div class="flash-goods"
+                             style="background-image : url('http://49.234.6.100:8080/tmall_springboot-0.0.1/img/productSingle_middle/8928.jpg');">
+                        </div>
+                    </div>
+                    <div class="flash-price">
+                        <div class="prefer-view-text">
+                            <text class="prefer-text">{{ goodsList.trend.good1.preferential }}</text>
+                        </div>
+                        <div class="prefer-view-text">
+                            <text class="prefer-text">{{ goodsList.trend.good2.preferential }}</text>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </list-item>
+        <block for="{{ foreHome }}">
+            <list-item clickeffect="false">
+                <div class="list-item-container">
+                    <div class="list-item">
+                        <div class="item-title-view">
+                            <text>{{ $item.name }}</text>
+                        </div>
+                        <div class="item-image-view">
+                            <image class="item-image-one"
+                                   src="http://49.234.6.100:8080/tmall_springboot-0.0.1/img/productSingle_large/{{
+                                           $item.products[0].firstProductImage.id }}.jpg"
+                                   onclick="detail({{$item.products[0].id}})"></image>
+                            <image class="item-image-two"
+                                   src="http://49.234.6.100:8080/tmall_springboot-0.0.1/img/productSingle_large/{{
+                                           $item.products[1].firstProductImage.id }}.jpg"
+                                   onclick="detail({{$item.products[1].id}})"></image>
+                        </div>
+                        <div class="item-text-view">
+                            <div class="item-text-one">
+                                <text class="item-text">{{ $item.products[0].name }}</text>
+                            </div>
+                            <div class="item-text-two">
+                                <text class="item-text">{{ $item.products[1].name }}</text>
+                            </div>
+                        </div>
+                        <div class="price-tag-view">
+                            <div class="item-price-one">
+                                <text class="price-original">￥{{ $item.products[0].originalPrice }}</text>
+                                <text class="price-promote">￥{{ $item.products[0].promotePrice }}</text>
+                            </div>
+                            <div class="item-price-two">
+                                <text class="price-original">￥{{ $item.products[1].originalPrice }}</text>
+                                <text class="price-promote">￥{{ $item.products[1].promotePrice }}</text>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </list-item>
+        </block>
+        <list-item clickeffect="false">
+            <div class="bottom"></div>
+        </list-item>
+    </list>
+
+    <div class="tab-bar">
+        <comp></comp>
+    </div>
+</div>

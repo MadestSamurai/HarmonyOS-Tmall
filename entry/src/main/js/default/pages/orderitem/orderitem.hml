@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="title">
+        <text if="{{ type == 'waitPay'}}" class="title-text">待付款</text>
+        <text if="{{ type == 'waitDelivery'}}" class="title-text">待发货</text>
+        <text if="{{ type == 'waitConfirm'}}" class="title-text">待收货</text>
+        <text if="{{ type == 'waitReview'}}" class="title-text">待评价</text>
+    </div>
+    <refresh refreshing="{{fresh}}" onrefresh="onRefresh" type="pulldown" lasttime="true">
+    <list class="page-list">
+        <list-item if="{{ bought.length != 0 }}" for="{{ (index, item) in bought }}" tid="item.id">
+            <div class="list-item"  if="{{ item.status == type}}">
+                <div class="code">
+                    <text>订单号：{{ item.orderCode }}</text>
+                </div>
+                <div class="address">
+                    <text>地址：{{ item.address }}</text>
+                </div>
+                <div class="good-item" for="{{ (orderIndex, orderItem) in item.orderItems }}">
+                    <div class="left"
+                         style='background-image : url("http://49.234.6.100:8080/tmall_springboot-0.0.1/img/productSingle_large/{{orderItem.product.firstProductImage.id}}.jpg");'>
+                    </div>
+                    <div class="right">
+                        <text class="title">{{ orderItem.product.name }}</text>
+                        <div class="context">
+                            <div class="price-view">
+                                <text class="price">¥{{ orderItem.product.promotePrice }}</text>
+                            </div>
+                            <div class="number-box">
+                                <text class="count">×{{ orderItem.number }}</text>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="total">
+                    <div class="total-price">
+                        <text>总计:</text>
+                        <text class="total-price-number">¥{{ item.total }}</text>
+                    </div>
+                    <button if="{{ type == 'waitPay'}}" class="pay-button" onclick="pay(item.id)">付款</button>
+                    <text if="{{ type == 'waitDelivery'}}" class="delivery-text">待发货</text>
+                    <button if="{{ type == 'waitConfirm'}}" class="pay-button" onclick="confirm(item.id)">确认收货</button>
+                    <button if="{{ type == 'waitReview'}}" class="pay-button">评价</button>
+                </div>
+            </div>
+        </list-item>
+    </list>
+    </refresh>
+</div>

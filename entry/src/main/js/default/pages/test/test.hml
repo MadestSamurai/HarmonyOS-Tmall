@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="test" for="{{selected}}">
+        <input type="checkbox" checked="{{$item}}" style="margin: 0;"></input>
+        <text>{{$item}}</text>
+    </div>
+    <div class="fullCheck">
+        <input id="checkboxId" type="checkbox" onchange="changeAllState" checked="{{ isFullCheck }}" style="margin-top: 3px;"/>
+        <label target="checkboxId"  class="radio"  style="margin-left: -3px;">全选</label>
+    </div>
+</div>

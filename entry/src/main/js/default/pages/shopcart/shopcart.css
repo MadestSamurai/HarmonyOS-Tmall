@@ -1,0 +1,268 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+}
+
+.title {
+    font-size: 38px;
+    text-align: center;
+    width: 100%;
+    margin-right: 10px;
+}
+
+.tab-bar {
+    position: absolute;
+}
+
+.cart-title {
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    padding: 0 15px;
+    font-size: 20px;
+}
+
+/* 购物车商品列表区域 */
+
+.list {
+    width: 100%;
+    padding: 10px;
+}
+
+.list-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 120px;
+    padding: 5px 0;
+    background-color: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.left {
+    flex: 1;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 8px;
+}
+
+.right {
+    flex-direction: column;
+    justify-content: space-between;
+    width: 180px;
+    height: 100px;
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.title {
+    font-size: 13px;
+    max-lines: 3;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    text-align: left;
+}
+
+.context {
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 40fp;
+    color: black;
+    font-size: 16px;
+    display: grid;
+    grid-template-columns: 50% 40% 10%;
+}
+
+.context .price {
+    font-weight: 600;
+    color: #ff2150;
+    width: 100fp;
+}
+
+.number-box button {
+    width: 20px;
+    text-color: #999;
+    font-size: 16px;
+    background-color: white;
+    border: 0.5fp solid grey;
+
+}
+
+.minusCountBtn {
+    border-radius: 5px 0 5px 0;
+
+}
+
+.addCountBtn {
+    border-radius: 0 5px 0 5px;
+    margin-right: 2px;
+}
+
+.number-box .count {
+    width: 20px;
+    text-align: center;
+    border: 0.5fp solid gray;
+    font-size: 12fp;
+}
+
+.remove-box {
+    width: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 结算区域 */
+
+.my-settle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 58px;
+    left: 2.5%;
+    z-index: 999;
+    width: 95%;
+    height: 50px;
+    padding: 0 10px;
+    font-size: 14px;
+    background-color: #b2000000;
+    border-radius: 50px;
+}
+.radio {
+    color: #ffdddddd;
+    font-size: 12px;
+}
+
+.fullCheck {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.amount-box {
+    width: 150px;
+    justify-content: flex-end;
+}
+
+.amount {
+    color: #ffdddddd;
+    margin-top: 4px;
+}
+
+.amount-price {
+    color: #ffdddddd;
+}
+
+.btn_settle {
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    min-width: 100px;
+    margin-right: -5px;
+    background-color: #ff2150;
+    color: #fff;
+    border-radius: 50px;
+}
+
+
+/* 空白购物车 */
+
+.empty-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60%;
+}
+
+.empty-img {
+    width: 240px;
+    height: 200px;
+}
+
+.tip-text {
+    margin-top: 15px;
+    color: gray;
+    font-size: 22px;
+}
+
+.your-like-title {
+    width: 100%;
+    text-align: center;
+    font-size: 22fp;
+    font-weight: 600;
+}
+
+.list-item-container {
+    width: 100%;
+    height: 275fp;
+    justify-content: center;
+    padding-top: 10fp;
+}
+
+.list-goods {
+    width: 48%;
+    margin: 2.5%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 60% 20% 20%;
+    background-color: white;
+    border-radius: 10fp;
+}
+
+.item-image-one {
+    border-radius: 10fp;
+    width: 100%;
+}
+
+.item-text-view {
+    background-color: white;
+}
+
+.item-text-one {
+    font-size: 12fp;
+    width: 100%;
+    padding-left: 2%
+}
+
+.price-tag-view {
+    width: 95%;
+    justify-content: center;
+    background-color: white;
+    border-radius: 10fp 10fp 0 0;
+}
+
+.item-price-one {
+    width: 100%;
+    padding-left: 5%;
+}
+
+.price-original {
+    font-size: 15px;
+    text-decoration: line-through;
+    color: gray;
+}
+
+.price-promote {
+    font-size: 20px;
+    font-weight: 600;
+    color: #ff2150;
+}
+
+.bottom {
+    height: 10%;
+}

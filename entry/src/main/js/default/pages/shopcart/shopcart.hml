@@ -1,0 +1,124 @@
+<element name='comp' src='../../common/component/tabBar/tabBar.hml'></element>
+
+<div class="container">
+    <div class="cart-title">
+        <text class="cart-title-text">购物车</text>
+    </div>
+
+    <div class="cart-content">
+        <list class="list" divider="true">
+            <list-item class="list-item" if="{{ carts.length != 0 }}" for="{{ (index, item) in carts }}" tid="item.id">
+                <input class="checkbox-single" type="checkbox" checked="{{ selected[0] }}"
+                       onchange="checkboxOnChange(index, selected[index])" style="margin : 0; border-color : #ff0000;">
+                </input>
+                <div class="left"
+                     style='background-image : url("http://49.234.6.100:8080/tmall_springboot-0.0.1/img/productSingle_large/{{item.product.firstProductImage.id}}.jpg");'>
+                </div>
+                <div class="right">
+                    <text class="title">{{ item.product.name }}</text>
+                    <div class="context">
+                        <div class="price-view">
+                            <text class="price">¥{{ item.product.promotePrice }}</text>
+                        </div>
+                        <div class="number-box">
+                            <button onclick="sub(index)" class="minusCountBtn">-</button>
+                            <text class="count">{{ item.number }}</text>
+                            <button onclick="add(index)" class="addCountBtn">+</button>
+                        </div>
+                        <div class="remove-box">
+                            <image src="/common/images/cart/remove.png" onclick="removeGoods(index)"
+                                   style="width : 15px; height : 15px;"></image>
+                        </div>
+                    </div>
+                </div>
+            </list-item>
+            <list-item clickeffect="false">
+                <div class="empty-cart" if="{{ carts.length == 0 && login}}">
+                    <image src="/common/images/empty.png" class="empty-img"></image>
+                    <text class="tip-text">购物车竟然是空的</text>
+                    <text class="tip-text" style="font-size: 12fp;color: gray;">再忙也要犒劳自己啊</text>
+                </div>
+            </list-item>
+            <list-item clickeffect="false">
+                <div class="empty-cart" if="{{ !login }}">
+                    <text class="tip-text">您还没有登录，点击下面按钮登录</text>
+                    <div class="btn_settle" onclick="goLogin">
+                        <text>登录</text>
+                    </div>
+                </div>
+            </list-item>
+            <list-item>
+                <text class="your-like-title">- 你可能还喜欢 -</text>
+            </list-item>
+            <block for="{{ foreHome }}">
+                <list-item clickeffect="false">
+                    <div class="list-item-container">
+                        <div class="list-goods" onclick="detail({{$item.products[0].id}})">
+                            <div class="item-image-view">
+                                <image class="item-image-one"
+                                       src="http://49.234.6.100:8080/tmall_springboot-0.0.1/img/productSingle_large/{{
+                                               $item.products[0].firstProductImage.id }}.jpg"></image>
+                            </div>
+                            <div class="item-text-view">
+                                <div class="item-text-one">
+                                    <text class="item-text">{{ $item.products[0].name }}</text>
+                                </div>
+                            </div>
+                            <div class="price-tag-view">
+                                <div class="item-price-one">
+                                    <text class="price-promote">￥{{ $item.products[0].promotePrice }}</text>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-goods" onclick="detail({{$item.products[1].id}})">
+                            <div class="item-image-view">
+                                <image class="item-image-one"
+                                       src="http://49.234.6.100:8080/tmall_springboot-0.0.1/img/productSingle_large/{{
+                                               $item.products[1].firstProductImage.id }}.jpg"></image>
+                            </div>
+                            <div class="item-text-view">
+                                <div class="item-text-one">
+                                    <text class="item-text">{{ $item.products[1].name }}</text>
+                                </div>
+                            </div>
+                            <div class="price-tag-view">
+                                <div class="item-price-one">
+                                    <text class="price-promote">￥{{ $item.products[1].promotePrice }}</text>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </list-item>
+            </block>
+            <list-item clickeffect="false">
+                <div class="bottom"></div>
+            </list-item>
+        </list>
+
+    <!--结算区域-->
+        <div class="my-settle" if="{{login}}">
+
+        <!-- 全选 -->
+            <div class="fullCheck">
+                <input id="checkboxId" type="checkbox" onchange="changeAllState" checked="{{ isFullCheck }}"
+                       style="margin-top : 3px; margin-left : -8px;"/>
+                <label target="checkboxId" class="radio" style="margin-left : -12px;">全选</label>
+            </div>
+
+        <!-- 合计 -->
+            <div class="amount-box">
+                <text class="amount" style="font-size : 14px;">合计:¥</text>
+                <text class="amount-price" style="font-size : 22px;">{{ checkedGoodsPrice }}</text>
+            </div>
+
+        <!-- 结算按钮 -->
+            <div class="btn_settle" onclick="settlement">
+                <text>结算({{ checkedCount }})</text>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-bar">
+        <comp></comp>
+    </div>
+</div>

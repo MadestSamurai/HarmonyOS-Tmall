@@ -1,0 +1,17 @@
+<div class="first" style="border-color: #ff0000;">
+    <div class="bottomview">
+        <block for="{{menus}}">
+            <div class="content" onclick="changecontent({{$idx}})">
+                <div class="icon-view">
+                    <image class="tab-image" src="{{$app.$def.globalData.cinidex==$idx?$item.img1:$item.img2}}">
+                    </image>
+                </div>
+                <div class="text">
+                    <text class="{{$app.$def.globalData.cinidex==$idx?'a':'b'}}">
+                        {{$item.text}}
+                    </text>
+                </div>
+            </div>
+        </block>
+    </div>
+</div>

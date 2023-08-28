@@ -1,0 +1,66 @@
+<div class="container">
+    <swiper class="swiper" id="swiper" index="0" indicator="true" loop="true"
+            digital="false" cachedsize="-1"
+            scrolleffect="spring">
+        <div for="{{ goodsDetail.product.productSingleImages }}" tid="item.id">
+            <image src="http://49.234.6.100:8080/tmall_springboot-0.0.1/img/productSingle/{{ $item.id }}.jpg"></image>
+        </div>
+    </swiper>
+
+    <div class="goods-info-box">
+        <div>
+            <text class="former-price">￥{{ goodsDetail.product.originalPrice }}</text>
+            <text class="price">￥{{ goodsDetail.product.promotePrice }}</text>
+        </div>
+        <div class="desc">
+            <text>{{ goodsDetail.product.subTitle }}</text>
+            <text style="margin-right : 10px;">库存：{{ goodsDetail.product.stock }}</text>
+        </div>
+        <div class="goods-info-body">
+            <text class="goods_name">{{ goodsDetail.product.name }}</text>
+            <div class="favi">
+                <image src="/common/images/product/document.png" style="width : 18px; height : 18px;"></image>
+                <text>收藏</text>
+            </div>
+        </div>
+        <div class="yf">
+            <text>发货：江苏南京</text>
+            <text> 快递：免运费</text>
+        </div>
+    </div>
+
+    <div class="detail">
+        <div class="attr" for="{{ (index, item) in goodsDetail.pvs }}" style="margin-bottom : 15px;">
+            <text style="width : 100px; max-lines : 1; text-overflow : ellipsis; margin-right : 5px;">{{
+                item.property.name }}</text>
+            <text style="width : 200px; color : black; max-lines : 1; text-overflow : ellipsis; text-align : left;">{{
+                item.value }}</text>
+        </div>
+    </div>
+
+    <div class="goods-images">
+        <div for="{{ goodsDetail.product.productDetailImages }}" tid="item.id">
+            <image src="http://49.234.6.100:8080/tmall_springboot-0.0.1/img/productDetail/{{ $item.id }}.jpg"
+                   style="width : 100%;"></image>
+        </div>
+    </div>
+
+    <div class="goods_nav">
+        <div class="dianpu">
+            <image src="/common/images/product/shop.png"></image>
+            <text>店铺</text>
+        </div>
+        <div class="kefu">
+            <image src="/common/images/product/service.png"></image>
+            <text>客服</text>
+        </div>
+        <div class="cart" onclick="goShortCart" style="position : relative;">
+            <image src="/common/images/product/cart.png"></image>
+            <text>购物车</text>
+        </div>
+        <div class="shopbtn">
+            <text class="addcart" onclick="addShopCart">加入购物车</text>
+            <text class="buy" onclick="buy">立即购买</text>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="title-line">
+        <text class="title">
+            账号密码登录
+        </text>
+    </div>
+    <div class="sign-in-line">
+        <text>
+            没有账号？
+        </text>
+        <text class="sign-in" onclick="register">
+            立即注册
+        </text>
+    </div>
+    <div class="input-item">
+        <input class="input" type="text" placeholder="请输入天猫账户" maxlength="20" showcounter="false" onchange="changeName"></input>
+    </div>
+    <div class="input-item">
+        <input class="input-pass" type="password" placeholder="请输入密码" showpasswordicon="false" onchange="changePass"></input>
+        <text class="forget">
+            忘记密码
+        </text>
+    </div>
+    <div class="circleall">
+        <button class="buttons" type="capsule" onclick="login">登录</button>
+    </div>
+</div>

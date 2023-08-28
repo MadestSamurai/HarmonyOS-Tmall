@@ -1,0 +1,63 @@
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.title-line {
+    width: 100%;
+    height: 100fp;
+    margin-left: 6%;
+    margin-top: 100fp;
+    align-items: flex-end;
+}
+
+.title {
+    font-size: 30fp;
+    text-align: center;
+}
+
+.sign-in-line {
+    width: 100%;
+    height: 40fp;
+    margin-top: 10fp;
+    margin-left: 6%;
+    font-size: 16fp;
+    justify-content: flex-start;
+}
+
+.sign-in {
+    color: #ff2150;
+}
+
+.input-item {
+    width: 90%;
+    margin-left: 5%;
+    background-color: transparent;
+    border-bottom: 1px solid #ff2150;
+}
+
+.input {
+    background-color: white;
+}
+
+.input-pass {
+    background-color: white;
+    width: 80%;
+}
+
+.forget {
+    font-size: 15fp;
+    color: grey;
+}
+
+.buttons {
+    margin-top: 15px;
+    margin-left: 5%;
+    width: 90%;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 10px;
+    background-color: #ff2150;
+}

@@ -1,0 +1,43 @@
+<element name='comp' src='../../common/component/tabBar/tabBar.hml'></element>
+
+<div class="container">
+    <div class="input-item">
+        <div class="search-item">
+            <input class="search" type="text" maxlength="20" enterkeytype="search"
+                   headericon="/common/images/search.png" placeholder="搜索" onchange="changeKeyword">
+            </input>
+            <input class="button" type="button" value="搜索" onclick="searchGoods"></input>
+        </div>
+    </div>
+
+    <div class="list-container">
+
+        <list class="left-list">
+            <list-item class="left-list-item" style="color : {{ index === actived ? '#ff2150' : '#666666' }};"
+                       for="{{ (index, value) in cateList }}" tid="index" on:click="activeChange(index)">
+                <text class="left-name">{{ value.cat_name }}</text>
+            </list-item>
+        </list>
+
+        <list class="right-list">
+            <list-item class="right-list-item" for="{{ (index, value) in cateLevel2 }}" tid="value.cate_id" clickeffect="false">
+                <text class="cate-lv2-title">{{ value.cat_name }}</text>
+
+                <div class="cate-lv3-list">
+
+                    <div class="cate-lv3-item" for="{{ (index2, item2) in value.children }}" tid="item2.cat_id"
+                         onclick="gotoGoodsList(item2.cat_name)">
+
+                        <image src="{{ item2.cat_icon }}"></image>
+
+                        <text class="cate-lv3-title">{{ item2.cat_name }}</text>
+                    </div>
+                </div>
+            </list-item>
+        </list>
+    </div>
+    <div class="bottom"></div>
+    <div class="tab-bar">
+        <comp></comp>
+    </div>
+</div>

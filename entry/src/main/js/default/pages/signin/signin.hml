@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="title-line">
+        <text class="title">
+            账号注册
+        </text>
+    </div>
+    <div class="input-item">
+        <input class="input" type="text" placeholder="请输入用户名" maxlength="20" showcounter="false" onchange="changeName"></input>
+    </div>
+    <div class="input-item">
+        <input class="input-pass" type="password" placeholder="请输入密码" showpasswordicon="false" onchange="changePass"></input>
+    </div>
+    <div class="input-item">
+        <input class="input-pass" type="password" placeholder="确认密码" showpasswordicon="false" onchange="changePassConfirm"></input>
+    </div>
+    <div class="circleall">
+        <button class="buttons" type="capsule" onclick="register">注册</button>
+    </div>
+</div>

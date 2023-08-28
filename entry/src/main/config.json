@@ -1,0 +1,99 @@
+{
+  "app": {
+    "vendor": "example",
+    "bundleName": "com.example.tmall",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {
+    "default": {
+      "network": {
+        "cleartextTraffic": true
+      }
+    }
+  },
+  "module": {
+    "mainAbility": "com.example.tmall.MainAbility",
+    "deviceType": [
+      "phone",
+      "tablet",
+      "tv",
+      "wearable"
+    ],
+    "abilities": [
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "metaData": {
+          "customizeData": [
+            {
+              "extra": "",
+              "name": "hwc-theme",
+              "value": "androidhwext:style/Theme.Emui.Light.NoTitleBar"
+            }
+          ]
+        },
+        "visible": true,
+        "name": "com.example.tmall.MainAbility",
+        "icon": "$media:icon",
+        "description": "$string:mainability_description",
+        "label": "$string:entry_MainAbility",
+        "type": "page",
+        "launchType": "standard"
+      }
+    ],
+    "distro": {
+      "moduleType": "entry",
+      "installationFree": false,
+      "deliveryWithInstall": true,
+      "moduleName": "entry"
+    },
+    "package": "com.example.tmall",
+    "name": ".MyApplication",
+    "js": [
+      {
+        "pages": [
+          "pages/precision/precision",
+          "pages/login/login",
+          "pages/signin/signin",
+          "pages/shopcart/shopcart",
+          "pages/category/category",
+          "pages/mine/mine",
+          "pages/test/test",
+          "pages/product/product",
+          "pages/orderinfo/orderinfo",
+          "pages/searchpage/searchpage",
+          "pages/orderitem/orderitem",
+          "pages/paypage/paypage"
+        ],
+        "name": "default",
+        "window": {
+          "designWidth": 720,
+          "autoDesignWidth": true
+        }
+      }
+    ],
+    "reqPermissions": [
+      {
+        "reason": "Internet Access",
+        "usedScene": {
+          "ability": [
+            "FormAbility"
+          ],
+          "when": "always"
+        },
+        "name": "ohos.permission.INTERNET"
+      }
+    ]
+  }
+}

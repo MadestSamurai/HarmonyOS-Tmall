@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="input-item">
+        <div class="search-item">
+            <input class="search" id="search" type="text" maxlength="20" enterkeytype="search"
+                   headericon="/common/images/search.png" placeholder="{{pholder}}" onchange="changeKeyword">
+            </input>
+            <input class="button" type="button" value="搜索" onclick="searchGoods"></input>
+        </div>
+    </div>
+
+    <refresh refreshing="{{fresh}}" onrefresh="refresh" type="pulldown" lasttime="true">
+        <list class="list" divider="true" scrolleffect="no" @scrollbottom="scrollbottomHandler">
+            <list-item class="list-item" for="{{(index,item) in content}}" tid="item.goods_id" onclick="detail(item.id)">
+                <div class="left" style="background-image: url('http://49.234.6.100:8080/tmall_springboot-0.0.1/img/productSingle_large/{{item.firstProductImage.id }}.jpg');"></div>
+                <div class="right">
+                    <text class="title">{{item.name}}</text>
+                    <div class="context">
+                        <text>￥ {{item.promotePrice}}</text>
+                    </div>
+                </div>
+            </list-item>
+            <list-item clickeffect="false" if="{{content.length == 0}}">
+                <text class="empty-list">没有找到相关商品</text>
+            </list-item>
+        </list>
+    </refresh>
+</div>

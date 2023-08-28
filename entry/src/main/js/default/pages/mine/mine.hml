@@ -1,0 +1,123 @@
+<element name='comp' src='../../common/component/tabBar/tabBar.hml'></element>
+
+<div class="container">
+    <list class="page-list">
+        <list-item clickeffect="false">
+            <div class="settings-bar">
+            </div>
+        </list-item>
+        <list-item clickeffect="false">
+            <div class="top-user">
+                <div class="logoview">
+                    <image class="avatar" src="common/images/mine/avatar.png"></image>
+                </div>
+                <div>
+                    <text class="username" onclick="toLogin">{{$app.$def.globalData.username}}</text>
+                </div>
+                <div>
+                    <button class="logout" onclick="logout" style="font-size: 12fp;background-color: #ff1250;width: 40fp;height: 20fp;">登出</button>
+                </div>
+            </div>
+        </list-item>
+        <list-item clickeffect="false">
+            <div class="suggest-bar">
+                <image class="suggest" src="common/images/mine/suggest.png"></image>
+            </div>
+        </list-item>
+        <list-item clickeffect="false">
+            <div class="order-bar">
+                <div class="order-title">
+                    <text>我的订单</text>
+                </div>
+                <div class="function-view">
+                    <div class="function">
+                        <div>
+                            <image class="func-pic" src="common/images/mine/need-pay.png" onclick="waitPay"></image>
+                        </div>
+                        <div>
+                            <text class="func-text">待付款</text>
+                        </div>
+                    </div>
+                    <div class="function">
+                        <div>
+                            <image class="func-pic" src="common/images/mine/need-send.png" onclick="waitDelivery"></image>
+                        </div>
+                        <div>
+                            <text class="func-text">待发货</text>
+                        </div>
+                    </div>
+                    <div class="function">
+                        <div>
+                            <image class="func-pic" src="common/images/mine/need-receive.png" onclick="waitConfirm"></image>
+                        </div>
+                        <div>
+                            <text class="func-text">待收货</text>
+                        </div>
+                    </div>
+                    <div class="function">
+                        <div>
+                            <image class="func-pic" src="common/images/mine/need-comment.png" onclick="waitReview"></image>
+                        </div>
+                        <div>
+                            <text class="func-text">待评价</text>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </list-item>
+        <list-item clickeffect="false">
+            <div class="ads-bar">
+                <div class="ads-title">
+                    <text>发现与推荐</text>
+                </div>
+                <image class="suggest" src="common/images/mine/ads.png"></image>
+            </div>
+        </list-item>
+        <block for="{{ foreHome }}">
+            <list-item clickeffect="false">
+                <div class="list-item-container">
+                    <div class="list-goods" onclick="detail({{$item.products[0].id}})">
+                        <div class="item-image-view">
+                            <image class="item-image-one"
+                                   src="http://49.234.6.100:8080/tmall_springboot-0.0.1/img/productSingle_large/{{
+                                           $item.products[0].firstProductImage.id }}.jpg"></image>
+                        </div>
+                        <div class="item-text-view">
+                            <div class="item-text-one">
+                                <text class="item-text">{{ $item.products[0].name }}</text>
+                            </div>
+                        </div>
+                        <div class="price-tag-view">
+                            <div class="item-price-one">
+                                <text class="price-promote">￥{{ $item.products[0].promotePrice }}</text>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="list-goods" onclick="detail({{$item.products[1].id}})">
+                        <div class="item-image-view">
+                            <image class="item-image-one"
+                                   src="http://49.234.6.100:8080/tmall_springboot-0.0.1/img/productSingle_large/{{
+                                           $item.products[1].firstProductImage.id }}.jpg"></image>
+                        </div>
+                        <div class="item-text-view">
+                            <div class="item-text-one">
+                                <text class="item-text">{{ $item.products[1].name }}</text>
+                            </div>
+                        </div>
+                        <div class="price-tag-view">
+                            <div class="item-price-one">
+                                <text class="price-promote">￥{{ $item.products[1].promotePrice }}</text>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </list-item>
+        </block>
+        <list-item clickeffect="false">
+            <div class="bottom"></div>
+        </list-item>
+    </list>
+    <div class="tab-bar">
+        <comp></comp>
+    </div>
+</div>
